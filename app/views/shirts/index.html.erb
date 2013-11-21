@@ -1,0 +1,10 @@
+<h1>Shirt Tracker</h1>
+<p>Here's a list of shirts:</p>
+
+<% @shirts.each do |shirt| %>
+<h2><%= shirt.name %></h2>
+<%= shirt.description %>
+<div>
+  <%= image_tag shirt.image %>
+</div>
+<% end %>
