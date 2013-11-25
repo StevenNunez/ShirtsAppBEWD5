@@ -1,10 +1,9 @@
 <h1>Shirt Tracker</h1>
-<p>Here's a list of shirts:</p>
-
-<% @shirts.each do |shirt| %>
-<h2><%= shirt.name %></h2>
-<%= shirt.description %>
-<div>
-  <%= image_tag shirt.image %>
-</div>
+<%= form_tag '/search', method: :get do %>
+  <%= label_tag 'q', "Search" %>
+  <%= text_field_tag 'q' %>
+  <%= submit_tag %>
 <% end %>
+<%= link_to "Create a shirt", new_shirt_path %>
+<p>Here's a list of shirts:</p>
+<%= render 'shirts' %>
